@@ -1,5 +1,11 @@
 
-<?php include 'inc/header.php';?>
+<?php
+if(!isset($_SESSION['username'])){
+    header('index.php');
+}
+
+include 'inc/header.php';?>
+
 <!-- 
 #
     Dashboard page
@@ -17,8 +23,8 @@
     </nav>
     <?php
         echo "<div class=' cabins container-fluid'>";
-        $sql_all_users = 'SELECT * FROM cabins';
-        if($result = $pdo->query($sql_all_users))
+        $sql_all_cabins = 'SELECT * FROM cabins';
+        if($result = $pdo->query($sql_all_cabins))
         {
             if($result->rowCount() > 0){
                 while($row = $result->fetch()){

@@ -82,3 +82,47 @@ function deleteCabin(id){
 }
 
 
+
+
+
+
+
+//  MAPS
+function myMap() {
+    pos = { lat:-34.116182,lng: 151.142636};
+    const map = new google.maps.Map(document.querySelector("#map"), {
+        zoom: 14,
+        center: pos,
+      });
+    const marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+      });
+      window.initMap = initMap;
+
+}
+
+
+//datepicker 
+
+
+
+
+$(function() {
+
+    $('input[name="datefilter"]').daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+  
+    $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+    });
+  
+    $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+    });
+  
+  });

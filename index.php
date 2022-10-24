@@ -9,32 +9,47 @@
     include 'inc/register.php';
     include 'inc/login.php';
 ?>
-<!-- Header -->
-<div class="container-fluid bg-info p-5 fs-1 text-center">
-    Welcome to SunnySpot
-</div>
-<!-- Navbar -->
-<nav class="text-bg-dark">
-        <div class="container">
-          <div class="fs-3 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            </ul>
-            <!-- Dynamic buttons depending on session -->
+
+<div class="d-flex text-center text-bg-dark">
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+        <div>
+        <h3 class="float-md-start mb-0">Sunny Spot</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link fw-bold py-1 px-0" href="cabins.php">Cabins</a>
+            <a class="nav-link fw-bold py-1 px-0" href="contacts.php">Contact</a>
             <?php
-                if(isset($_SESSION['username'])){
-                    echo("<a href='dashboard.php'>
-                    <button type='button' class='fs-4 m-2 btn btn-warning'>To Personal Cabinet</button>
-                    </a>");
-                }else{
-                    echo("
-                        <button type='button' data-bs-toggle='modal' data-bs-target='#regModal' class='fs-4 m-2 btn btn-info'>Register</button>
-                        <button type='button' data-bs-toggle='modal' data-bs-target='#logModal' class='fs-4 m-2 btn btn-warning'>Login</button>
+            if(isset($_SESSION['username'])){
+                echo("<a href='dashboard.php' class='nav-link fw-bold py-1 px-0'>Dashboard</a>");
+            }else{
+                echo("
+                        <button type='button' data-bs-toggle='modal' data-bs-target='#regModal' class='ms-3 btn btn-info'>Register</a>
+                        <button type='button' data-bs-toggle='modal' data-bs-target='#logModal' class='ms-2 btn btn-warning'>Login</button>
                     ");
                 }
-                ?>
-            </div>
-          </div>
-</nav>
+            ?>
+        </nav>
+        </div>
+    </header>
+
+    <main class="px-3">
+        <h1>Cover your trip.</h1>
+        <p class="lead">We have big range of cabins for you and your friends and family, have a look at them and pick one that suits more for you </p>
+        <p class="lead">
+        <a href="cabins.php" class="btn btn-lg btn-secondary text-dark fw-bold border-white bg-white">Cabins</a>
+        </p>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+        <p>Copyright SunnySpot 2022</p>
+    </footer>
+    </div>
+
+</div>
+
+
 
     <!-- Register modal -->
     <div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="regModalLabel" aria-hidden="true">
@@ -91,7 +106,6 @@
         </div>
         </div>
     </div>
-
 
 <!-- Include footer -->
 <?php include 'inc/footer.php';?>
