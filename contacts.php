@@ -1,6 +1,7 @@
 <?php 
     // Include header
     include 'inc/header.php';
+    $message = ''
 ?>
 
 
@@ -19,7 +20,7 @@
                 echo("<a href='dashboard.php' class='nav-link fw-bold py-1 px-0'>Dashboard</a>");
             }else{
                 echo("
-                        <button type='button' data-bs-toggle='modal' data-bs-target='#regModal' class='ms-3 btn btn-info'>Register</a>
+                        <button type='button' data-bs-toggle='modal' data-bs-target='#regModal' class='ms-2 btn btn-info'>Register</a>
                         <button type='button' data-bs-toggle='modal' data-bs-target='#logModal' class='ms-2 btn btn-warning'>Login</button>
                     ");
                 }
@@ -59,5 +60,6 @@
 
 <?php
 //Include footer
+include 'inc/modals.php';
 include 'inc/footer.php';
 ?>

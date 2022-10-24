@@ -19,6 +19,7 @@ include 'inc/header.php';?>
         <ul class="navbar-nav">
             <li class="nav-item"><a href="index.php" class="nav-link">Homepage</a></li>
             <li class="nav-item"><a class=" nav-link" href="inc/logout.php">Logout</a></li>
+            <li class="nav-item"><a class=" nav-link" href="inc/bookings.php">Bookings</a></li>
         </ul>
     </nav>
     <?php
@@ -30,7 +31,7 @@ include 'inc/header.php';?>
                 while($row = $result->fetch()){
                     echo "
                     <div id='cabin-$row[cabin_id]' class='card m-2' id style='width: 20rem;'>
-                        <img src='...' class='card-img-top' alt='Cabin image'>
+                        <img src='inc/cabins/cabin$row[cabin_id].jpg' class='card-img-top' alt='Cabin image'>
                         <div class='card-body'>
                             <h5 class='card-title'>$row[cabin_name] </h5>
                             <p class='card-text'>$row[cabin_description]</p>
