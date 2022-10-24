@@ -35,7 +35,7 @@
     </header>
 
     <main class="px-3">
-        <h1>Cover your trip.</h1>
+        <h1>A lot of cabins</h1>
         <p class="lead">We have big range of cabins for you and your friends and family, have a look at them and pick one that suits more for you </p>
         <p class="lead">
         <a href="cabins.php" class="btn btn-lg btn-secondary text-dark fw-bold border-white bg-white">Cabins</a>

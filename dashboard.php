@@ -1,11 +1,11 @@
 
 <?php
+include 'inc/header.php';
+
 if(!isset($_SESSION['username'])){
-    header('index.php');
+    header('location:index.php');
 }
-
-include 'inc/header.php';?>
-
+?>
 <!-- 
 #
     Dashboard page
