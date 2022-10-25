@@ -19,7 +19,7 @@ if(!isset($_SESSION['username'])){
         <ul class="navbar-nav">
             <li class="nav-item"><a href="index.php" class="nav-link">Homepage</a></li>
             <li class="nav-item"><a class=" nav-link" href="inc/logout.php">Logout</a></li>
-            <li class="nav-item"><a class=" nav-link" href="inc/bookings.php">Bookings</a></li>
+            <li class="nav-item"><a class=" nav-link" href="staff.php">Staff operations</a></li>
         </ul>
     </nav>
     <?php

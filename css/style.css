@@ -166,3 +166,13 @@
   width: 100%;
   height: 50px;
 }
+
+
+.staff-pic{
+  transition: all 1s;
+  width: 50px;
+}
+.staff-pic:hover{
+
+  width: 300px;
+}
