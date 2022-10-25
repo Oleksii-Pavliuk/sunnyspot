@@ -62,6 +62,22 @@
         $price_night = $_POST['price_night'];
         $price_week = $_POST['price_week'];
 
+        // File upload 
+        $image_file = $_FILES["cabin_img"];
+
+        if (!isset($image_file)) {
+            die('No file uploaded.');
+        }
+               
+        // Move the temp image file to the images/ directory
+        move_uploaded_file(
+            // Temp image location
+            $image_file["tmp_name"],
+
+            // New image location, is the location of the current PHP file
+            __DIR__ ."/cabins/cabin". $id .".jpg"
+        );
+
         $sql_add = "INSERT INTO cabins (cabin_name, cabin_description, price_night, price_week) VALUES (?, ?, ?, ?)";
 
         if($stmt = $pdo->prepare($sql_add)){
@@ -91,7 +107,7 @@
                 <?php
                     echo ("
                     <label for='cabin_img'>Cabin photo:</label>
-                    <input type='file' id='cabin_img' name='cabin_img' accept='image/jpg'>
+                    <input type='file' id='cabin_img' name='cabin_img' accept='image/jpeg'>
                     <br>
                     <br>
                     <label for='cabin_name'>Cabin name:</label>

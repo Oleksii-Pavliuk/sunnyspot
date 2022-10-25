@@ -50,14 +50,14 @@
                                     <div class='col-lg-6'>
                                         <form>
                                             <h1 class='display-5 fw-bold lh-1 mb-3'>$row[cabin_name]</h1>
-                                            <p class='lead ms-2'>$row[cabin_description]</p>
-                                            <span class ='ms-2'>Price for night: $row[price_night]$ / </span>
-                                            <span class ='ms-2'> Price for week: $row[price_week]$</span>
+                                            <p class='lead'>$row[cabin_description]</p>
+                                            <span class =''>Price for night: $row[price_night]$ / </span>
+                                            <span class =' '> Price for week: $row[price_week]$</span>
                                             <div class='d-grid gap-2 d-md-flex justify-content-md-start'>
-                                            <label class='ms-2' for='date'>Chose your dates:</label>
+                                            <label class='' for='date'>Chose your dates:</label>
                                             <input id='date$row[cabin_id]' class='date' type='text' name='date' value='' />
                                             </div>
-                                            <input type='button' onClick='book($row[cabin_id]);' class=' m-2 w-100 btn btn-outline-primary btn-lg px-4 type='submit' value='Chose dates'
+                                            <input type='button' onClick='book($row[cabin_id]);' class='mt-4 w-100 btn btn-outline-primary btn-lg px-4 type='submit' value='Chose dates'
                                         </form>
                                     </div>
                                 </div>
@@ -80,9 +80,6 @@
             ?>
         </main>
 
-        <footer class="mt-auto text-center mt-5 text-black-50">
-            <p>Copyright SunnySpot 2022</p>
-        </footer>
 
     </div>
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -106,6 +103,9 @@
                 }
 </script>
 
+<footer class="text-center mt-5 text-black-50">
+            <p>Copyright SunnySpot 2022</p>
+</footer>
 
 <?php
 //Include footer

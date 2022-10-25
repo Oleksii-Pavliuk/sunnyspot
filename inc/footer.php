@@ -9,6 +9,6 @@
 <!-- Custom js -->
 <script src="js/script.js?v=<?php echo time(); ?>"></script>
 <!-- Google maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx-8JfDOuOdpRYGG5p_90PSJwbhlaSrJI&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php include'api.php';?>=myMap"></script>
 </body>
 </html>
