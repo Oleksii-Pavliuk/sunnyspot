@@ -1,0 +1,2 @@
+Task for this project was to build responsive website with CMS and employees operations displayed in dashboard for camping/caravan company.
+To do this I designed and created database which includes data about staff , staff operations, cabins, customers and bookings.For this purposes I used PHP and MySQL for backend and HTML Bootstrap and JS with various JS libs
