@@ -17,6 +17,7 @@
                 $cabin = $stmt->fetch();
                 echo $cabin['cabin_name'].'||';
                 echo $cabin['cabin_description'].'||';
+                echo $cabin['cabin_features'].'||';
                 echo $cabin['price_night'].'||';
                 echo $cabin['price_week'].'||';
             }else{

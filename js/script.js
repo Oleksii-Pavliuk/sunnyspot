@@ -15,8 +15,9 @@ xmlhttp.onreadystatechange = function() {
         document.querySelector("#cabin_id").value= id
         document.querySelector("#cabin_name").value = cabin[0]
         document.querySelector("#cabin_description").value = cabin[1]
-        document.querySelector("#price_night").value = cabin[2]
-        document.querySelector('#price_week').value = cabin[3]
+        document.querySelector("#cabin_features").value = cabin[2]
+        document.querySelector("#price_night").value = cabin[3]
+        document.querySelector('#price_week').value = cabin[4]
         document.querySelector('#form_button').name = 'editSubmit'
     }
 };
@@ -99,7 +100,6 @@ function myMap() {
         map: map,
       });
       window.initMap = initMap;
-
 }
 
 

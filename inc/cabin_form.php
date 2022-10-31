@@ -11,6 +11,7 @@
         $id = $_POST['cabin_id'];
         $name= $_POST['cabin_name'];
         $description = $_POST['cabin_description'];
+        $features = $_POST['cabin_features'];
         $price_night = $_POST['price_night'];
         $price_week = $_POST['price_week'];
         $availability = $_POST['datefilter'];
@@ -33,15 +34,16 @@
         );
 
 
-        $sql_edit = "UPDATE cabins SET cabin_name = ?, cabin_description = ?, price_night = ?,price_week = ?,cabin_availability = ? WHERE (cabin_id = ?)";
+        $sql_edit = "UPDATE cabins SET cabin_name = ?, cabin_description = ?,cabin_features=?, price_night = ?,price_week = ?,cabin_availability = ? WHERE (cabin_id = ?)";
 
         if($stmt = $pdo->prepare($sql_edit)){
-            $stmt->bindParam(6, $id);
+            $stmt->bindParam(7, $id);
             $stmt->bindParam(1, $name);
             $stmt->bindParam(2, $description);
-            $stmt->bindParam(3, $price_night);
-            $stmt->bindParam(4, $price_week);
-            $stmt->bindParam(5, $availability);
+            $stmt->bindParam(3, $features);
+            $stmt->bindParam(4, $price_night);
+            $stmt->bindParam(5, $price_week);
+            $stmt->bindParam(6, $availability);
             //Exeecute the querry against opened connection
             try{
                 $stmt -> execute();
@@ -59,6 +61,7 @@
         $id = $_POST['cabin_id'];
         $name= $_POST['cabin_name'];
         $description = $_POST['cabin_description'];
+        $features = $_POST['cabin_features'];
         $price_night = $_POST['price_night'];
         $price_week = $_POST['price_week'];
 
@@ -78,13 +81,14 @@
             __DIR__ ."/cabins/cabin". $id .".jpg"
         );
 
-        $sql_add = "INSERT INTO cabins (cabin_name, cabin_description, price_night, price_week) VALUES (?, ?, ?, ?)";
+        $sql_add = "INSERT INTO cabins (cabin_name, cabin_description,cabin_features, price_night, price_week) VALUES (?, ?, ?, ?, ?)";
 
         if($stmt = $pdo->prepare($sql_add)){
             $stmt->bindParam(1, $name);
             $stmt->bindParam(2, $description);
-            $stmt->bindParam(3, $price_night);
-            $stmt->bindParam(4, $price_week);
+            $stmt->bindParam(3, $features);
+            $stmt->bindParam(4, $price_night);
+            $stmt->bindParam(5, $price_week);
             //Exeecute the querry against opened connection
             try{
                 $stmt -> execute();
@@ -118,6 +122,11 @@
                     <label for='cabin_description'>Cabin description:</label>
                     <br>
                     <textarea name='cabin_description' id='cabin_description' cols='30' rows='10' value=''></textarea>
+                    <br>
+                    <br>
+                    <label for='cabin_features'>Cabin description(put column after each feature):</label>
+                    <br>
+                    <textarea name='cabin_features' id='cabin_features' cols='30' rows='10' value=''></textarea>
                     <br>
                     <br>
                     <label for='price_night'>Price night:</label>

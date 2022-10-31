@@ -35,6 +35,9 @@ if(!isset($_SESSION['username'])){
                         <div class='card-body'>
                             <h5 class='card-title'>$row[cabin_name] </h5>
                             <p class='card-text'>$row[cabin_description]</p>
+                            <?php
+                                
+                            ?>
                         </div>
                         <ul class='list-group list-group-flush'>
                             <li class='list-group-item'>Night price: $row[price_night]</li>

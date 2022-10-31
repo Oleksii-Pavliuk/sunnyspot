@@ -3,7 +3,7 @@
     include 'inc/header.php';
     $message ='';
 ?>
-
+    <!-- Page displays available cabins for customers -->
     <div class="text-bg-white">
         
         <div class="cabins cover-container d-flex w-100 h-100 p-3 mx-auto flex-column rounded">
@@ -36,6 +36,7 @@
                     if($result->rowCount() > 0){
                         while($row = $result->fetch()){
                         $availability = explode("-",$row['cabin_availability']);
+                        $features = explode(';',$row['cabin_features']);
                         if( $availability[0] == '' || $availability[1] == ''){
                             $availability = [0,0];
                         }
@@ -51,6 +52,13 @@
                                         <form>
                                             <h1 class='display-5 fw-bold lh-1 mb-3'>$row[cabin_name]</h1>
                                             <p class='lead'>$row[cabin_description]</p>
+                                            <ul>"
+                ?>
+                <?php
+                    foreach($features as $feature){
+                    echo"<li>$feature</li>";
+                    }
+                    echo"                   </ul>
                                             <span class =''>Price for night: $row[price_night]$ / </span>
                                             <span class =' '> Price for week: $row[price_week]$</span>
                                             <div class='d-grid gap-2 d-md-flex justify-content-md-start'>
